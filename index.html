@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <title>Game Brake</title>
+    <style>
+    body  {background-color: grey;}
+    </style>
+  </head>
+
+  <body>
+    <h1 style="color: green; text-align:center;">Game Brake</h1>
+    <p style="text-align: center">
+ <div class="box">
+      <canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3; color:green;"></canvas>
+      <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(190,100,80,0,4*Math.PI);
+        ctx.stroke();
+        ctx.moveTo(200,90);
+        ctx.lineTo(240,90);
+        ctx.stroke();
+        ctx.moveTo(140,90);
+        ctx.lineTo(180,90);
+        ctx.stroke();
+        ctx.moveTo(240,130);
+        ctx.lineTo(140,130);
+        ctx.stroke();
+        ctx.moveTo(280,100);
+        ctx.lineTo(310,100);
+        ctx.stroke();
+        ctx.moveTo(310,100);
+        ctx.lineTo(280,80);
+        ctx.stroke();
+        ctx.moveTo(280,80);
+        ctx.lineTo(310,80);
+        ctx.stroke();
+        ctx.moveTo(320,70);
+        ctx.lineTo(350,70);
+        ctx.stroke();
+        ctx.moveTo(350,70);
+        ctx.lineTo(320,50);
+        ctx.stroke();
+        ctx.moveTo(350,50);
+        ctx.lineTo(320,50);
+        ctx.stroke();
+        ctx.moveTo(330,40);
+        ctx.lineTo(300,40);
+        ctx.stroke();
+        ctx.moveTo(330,40);
+        ctx.lineTo(300,20);
+        ctx.stroke();
+        ctx.moveTo(330,20);
+        ctx.lineTo(300,20);
+        ctx.stroke();
+      </script>
+  </div>
+    </p>
+    <h2 style="color: green;">Porfolio</h2>
+    <ul style="list-style-type:square; color: black; font-size: 20px">
+      <li>
+        <a>Snake</a>
+      </li>
+
+    </ul>
+
+  </body>
+</html>
