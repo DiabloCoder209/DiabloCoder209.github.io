@@ -1,7 +1,7 @@
-var cs = 16	//canvas size in tiles
-var ts = 20	//tile size in pixels
-var ctx 	//global context
-var playing	//not game over
+var cs = 16	
+var ts = 20	
+var ctx 	
+var playing	
 var lines = 0
 
 function Shape(){
@@ -68,7 +68,7 @@ function tick() {
 		if(s.piece, detect(s.piece, 0,1)){
 			for (var j = 0; j<s.piece.length; j++){
 				b = s.piece[j]
-				solid[s.pos[0]+b[0]][s.pos[1]+b[1]] = s.type+1;	//soldify the shape, store the color as well
+				solid[s.pos[0]+b[0]][s.pos[1]+b[1]] = s.type+1;	
 			}
 			
 			clearLines();
