@@ -8,18 +8,18 @@ function Shape(){
 	this.pos = [cs/2-1, -1]
 	this.type = parseInt(Math.random() * tetrominoes.length)
 	this.piece = tetrominoes[this.type];
-	//this.color = "hsl(" + Math.pow(parseInt(Math.random() * 16), 2) + ",75%,50%)"
+	
 }
 
 var s;
 
-var tetrominoes = [	[[0,1],[1,1],[2,1],[3,1]],	// I
-					[[0,0],[0,1],[1,1],[1,0]],	// O
-					[[0,1],[1,1],[2,1],[2,0]],	// L
-					[[0,1],[1,1],[2,1],[0,0]],	// J
-					[[1,0],[2,0],[0,1],[1,1]],	// S
-					[[0,0],[1,0],[1,1],[2,1]],	// Z
-					[[1,0],[0,1],[1,1],[2,1]]	// T	
+var tetrominoes = [	[[0,1],[1,1],[2,1],[3,1]],	
+					[[0,0],[0,1],[1,1],[1,0]],	
+					[[0,1],[1,1],[2,1],[2,0]],	
+					[[0,1],[1,1],[2,1],[0,0]],	
+					[[1,0],[2,0],[0,1],[1,1]],	
+					[[0,0],[1,0],[1,1],[2,1]],	
+					[[1,0],[0,1],[1,1],[2,1]]		
 				  ]
 					
 var colors = [	"00FFFF",
@@ -92,7 +92,7 @@ function tick() {
 function detect(shape, incX, incY) {
 	for (var i = 0; i<shape.length; i++){
 		if ( (shape[i][0]+s.pos[0]+incX < 0) || (shape[i][0]+s.pos[0]+incX == cs) || (shape[i][1]+s.pos[1]+incY == cs) || (solid[shape[i][0]+s.pos[0]+incX][shape[i][1]+s.pos[1]+incY]) ){
-		//get the value in solid of the x+pos and y+pos+1 of the block, or see if the y+1 value equals canvas size
+		
 			return true;
 		}
 	}
@@ -101,14 +101,14 @@ function detect(shape, incX, incY) {
 document.onkeydown=function(e){
 	var e=window.event || e
 	switch(e.keyCode){
-		case 37: //left
+		case 37: 
 			if(!detect(s.piece,-1,0)){
 				clearShape(s.piece, s.pos[0], s.pos[1]);
 				s.pos[0]--;
 				drawShape(s.piece, s.pos[0], s.pos[1]);
 			}
 			break;
-		case 38: //up
+		case 38: 
 			dirs = s.type==0 ? [0, -1, 1, -2, 2] : [0, -1, 1];
 			for (var i in dirs){
 				if(!detect(rotate(),dirs[i],0)){
@@ -120,14 +120,14 @@ document.onkeydown=function(e){
 				}
 			}
 			break;
-		case 39: //right
+		case 39: 
 			if(!detect(s.piece,1,0)){
 				clearShape(s.piece, s.pos[0], s.pos[1]);
 				s.pos[0]++;
 				drawShape(s.piece, s.pos[0], s.pos[1]);
 			}
 			break;
-		case 40: //down
+		case 40: 
 			if(!detect(s.piece,0,1)){
 				clearShape(s.piece, s.pos[0], s.pos[1]);
 				s.pos[1]++;
